@@ -7,19 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FF1B1B1B">
-        <ListBox x:Name="lbDisplay" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="269,37,269,94"/>
+        <ListBox x:Name="lbDisplay" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="269,37,269,94" SelectionChanged="lbDisplay_SelectionChanged"/>
         <TextBox x:Name="txtToAdd" HorizontalAlignment="Left" Margin="74,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Height="36" FontSize="16"/>
         <Label Content="Info to add to list" HorizontalAlignment="Left" Margin="74,54,0,0" VerticalAlignment="Top" Foreground="#FFDAD9D9" Width="138"/>
         <Button x:Name="btnAddToList" Content="Add" HorizontalAlignment="Left" Margin="89,140,0,0" VerticalAlignment="Top" Width="123" Height="37" Click="btnAddToList_Click" FontSize="18"/>
-        <Button x:Name="btnDisplayStudent" Content="Display Selected Student" HorizontalAlignment="Left" Margin="601,140,0,0" VerticalAlignment="Top" Width="166" Height="37" FontSize="14" Click="btnDisplayStudent_Click"/>
-        <TextBox HorizontalAlignment="Left" Margin="665,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="665,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="665,322,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="665,376,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="txtFirstName" Content="First Name" HorizontalAlignment="Left" Margin="579,213,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
-        <Label x:Name="txtLastName" Content="Last Name" HorizontalAlignment="Left" Margin="579,262,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
-        <Label x:Name="txtCSIGrade" Content="CSI Grade" HorizontalAlignment="Left" Margin="579,314,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
-        <Label x:Name="txtGenEdGrade" Content="Gen Ed Grade" HorizontalAlignment="Left" Margin="577,372,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+        <Button x:Name="btnDisplayStudent" Content="Display Selected Student" HorizontalAlignment="Left" Margin="601,22,0,0" VerticalAlignment="Top" Width="166" Height="37" FontSize="14" Click="btnDisplayStudent_Click"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Margin="665,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Margin="665,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCSIGrade" HorizontalAlignment="Left" Margin="665,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtGenEdGrade" HorizontalAlignment="Left" Margin="665,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="579,95,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="579,144,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+        <Label x:Name="lblCSIGrade" Content="CSI Grade" HorizontalAlignment="Left" Margin="579,196,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+        <Label x:Name="lblGenEdGrade" Content="Gen Ed Grade" HorizontalAlignment="Left" Margin="577,254,0,0" VerticalAlignment="Top" Foreground="#FFBBBBBB"/>
+        <Button x:Name="btnAddStudent" Content="Add Student" HorizontalAlignment="Left" Margin="610,310,0,0" VerticalAlignment="Top" Width="157" Height="30" Click="btnAddStudent_Click"/>
+        <Button x:Name="btnRemoveStudent" Content="Remove Selected Student" HorizontalAlignment="Left" Margin="44,195,0,0" VerticalAlignment="Top" Height="36" Width="212" FontSize="16" Click="btnRemoveStudent_Click"/>
 
     </Grid>
 </Window>
