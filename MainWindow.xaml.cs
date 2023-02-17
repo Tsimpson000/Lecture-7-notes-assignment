@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Tyler Simpson
+//February 17 2023
+//Lecture 7 notes assignment
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 //What "Item" in your listbox and combo box do you add objects to to display them?
-//index
+//SelectedIndex
 
 //What's the property name that returns the selected item's index?
 //.SelectedIndex
@@ -45,8 +49,9 @@ namespace Lecture_7_notes_assignment
             //lbDisplay.Items.Add("Tyler");
             Preload();
             DisplayToListBox();
-
+            DisplayToComboBox();
             lbDisplay.SelectedIndex = 0;
+            cbDisplay.SelectedIndex = 0;
         }
 
         public void Preload()
@@ -84,6 +89,19 @@ namespace Lecture_7_notes_assignment
                 string lastName = students[i].LastName;
                 string fullName = firstName + " " + lastName;
                 lbDisplay.Items.Add(fullName);
+            }
+        }
+        public void DisplayToComboBox()
+        {
+            //use .Clear() method to clear all items from listbox
+            cbDisplay.Items.Clear();
+            //loop through list to add each name to a different index
+            for (int i = 0; i < students.Count; i++)
+            {
+                string firstName = students[i].FirstName;
+                string lastName = students[i].LastName;
+                string fullName = firstName + " " + lastName;
+                cbDisplay.Items.Add(fullName);
             }
         }
 
@@ -136,12 +154,8 @@ namespace Lecture_7_notes_assignment
         //this method runs when item selected in the list box changes
         private void lbDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //display student info in text boxes without clicking button, just selecting it on list
-            int selectedIndex = lbDisplay.SelectedIndex;
 
-            Student selectedStudent = students[selectedIndex];
-
-            DisplayStudentInfo(selectedStudent);
+            DisplayUpdatedInfo(lbDisplay.SelectedIndex);
         }
 
         public void DisplayStudentInfo(Student student)
@@ -151,6 +165,20 @@ namespace Lecture_7_notes_assignment
             txtLastName.Text = student.LastName;
             txtCSIGrade.Text = student.CSIGrade.ToString();
             txtGenEdGrade.Text = student.GenEdGrade.ToString();
+        }
+
+        //this method runs when item selected in the combo box changes
+        private void cbDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DisplayUpdatedInfo(cbDisplay.SelectedIndex);
+        }
+        public void DisplayUpdatedInfo(int selectedIndex)
+        {
+            //display student info in text boxes without clicking button, just selecting it on list
+            
+            Student selectedStudent = students[selectedIndex];
+
+            DisplayStudentInfo(selectedStudent);
         }
     }
 }
