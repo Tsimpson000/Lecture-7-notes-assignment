@@ -127,7 +127,7 @@ namespace Lecture_7_notes_assignment
 
             //remove by object
             int selectedIndex = lbDisplay.SelectedIndex;
-            selectedStudent = students[selectedIndex];
+            Student selectedStudent = students[selectedIndex];
             students.Remove(selectedStudent);
 
             DisplayToListBox();
@@ -139,7 +139,7 @@ namespace Lecture_7_notes_assignment
             //display student info in text boxes without clicking button, just selecting it on list
             int selectedIndex = lbDisplay.SelectedIndex;
 
-            selectedStudent = students[selectedIndex];
+            Student selectedStudent = students[selectedIndex];
 
             DisplayStudentInfo(selectedStudent);
         }
@@ -147,10 +147,10 @@ namespace Lecture_7_notes_assignment
         public void DisplayStudentInfo(Student student)
         {
             
-            txtFirstName.Text = selectedStudent.FirstName;
-            txtLastName.Text = selectedStudent.LastName;
-            txtCSIGrade.Text = selectedStudent.CSIGrade.ToString();
-            txtGenEdGrade.Text = selectedStudent.GenEdGrade.ToString();
+            txtFirstName.Text = student.FirstName;
+            txtLastName.Text = student.LastName;
+            txtCSIGrade.Text = student.CSIGrade.ToString();
+            txtGenEdGrade.Text = student.GenEdGrade.ToString();
         }
     }
 }
